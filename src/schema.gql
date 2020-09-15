@@ -21,6 +21,6 @@ type Topic {
 }
 
 type Query {
-  topics: [Topic!]!
-  messages(topic: Int!, offset: Int = 0, limit: Int = 10): [Message!]!
+  topics(topics: [Int!] = [], confidence: [Int!] = 0, relevance: [Int!] = 0): [Topic!]!
+  messages(topics: [Int!] = [], confidence: [Int!] = 224, relevance: [Int!] = 32, offset: Int = 0, limit: Int = 10): [Message!]!
 }
