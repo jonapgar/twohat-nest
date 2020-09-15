@@ -22,5 +22,5 @@ type Topic {
 
 type Query {
   topics: [Topic!]!
-  messages: [Message!]!
+  messages(topic: Int!, offset: Int = 0, limit: Int = 10): [Message!]!
 }
