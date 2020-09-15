@@ -1,0 +1,26 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Message {
+  id: Int!
+  player: String!
+  client_id: Int!
+  text: String!
+  simplified: String!
+  flags: Int!
+  topics: [Topic!]!
+}
+
+type Topic {
+  id: Int!
+  topic: Int!
+  message: Message!
+  relevance: Int!
+  confidence: Int!
+}
+
+type Query {
+  topics: [Topic!]!
+  messages: [Message!]!
+}

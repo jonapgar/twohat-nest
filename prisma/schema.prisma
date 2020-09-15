@@ -1,0 +1,28 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Topic {
+  id    Int     @id @default(autoincrement())
+  topic Int
+  messageId Int
+  message Message @relation(fields: [messageId], references: [id])
+  relevance Int
+  confidence Int
+}
+
+model Message {
+  id    Int     @id @default(autoincrement())
+  player   String
+  client_id Int
+  text        String
+  simplified String
+  filtered Int
+  flags Int
+  @@index([client_id,player])
+}
